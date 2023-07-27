@@ -1,0 +1,28 @@
+
+# Dependency directories
+node_modules/
+vendor/
+
+# dotenv environment variables file
+.env
+
+# Logs
+logs
+*.log
+
+# Cache
+.cache
+.phpunit.result.cache
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+
+# lock files
+composer.lock
+package-lock.json
+

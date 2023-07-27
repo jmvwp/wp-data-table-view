@@ -1,0 +1,31 @@
+.wp-data-table-template
+    table
+        border-collapse: collapse
+        width: 100%
+        margin: 0 auto
+
+    th, td
+        padding: 1rem
+        text-align: left
+
+    thead tr
+        background-color: #555
+        color: #fDfDfD
+
+    tr.row:nth-child(even)
+        background-color: #f6f6f6
+        color: #333
+
+    td.control
+        width: 1rem
+
+    td.info-cell
+        &.loading, &.error
+            text-align: center
+
+    a
+        text-decoration: none
+        color: #333
+        &:visited
+            color: #333
+

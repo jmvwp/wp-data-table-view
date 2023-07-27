@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ruleset name="MVWP WPDataTableView">
+    <file>./config.php</file>
+    <file>./di-config.php</file>
+    <file>./src</file>
+    <arg value="sp"/>
+    <arg name="colors"/>
+    <config name="testVersion" value="8.0-"/>
+    <config name="text_domain" value="mvwp-wp-data-table-view"/>
+    <rule ref="Inpsyde"/>
+</ruleset>
