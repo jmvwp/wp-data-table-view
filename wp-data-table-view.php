@@ -18,6 +18,8 @@ declare(strict_types=1);
 
 namespace MVWP\WPDataTableView;
 
+use MVWP\WPDataTableView\Providers\DataRepository;
+
 if (! defined("ABSPATH")) {
     exit;
 }
@@ -63,7 +65,7 @@ add_action(
         $container = include __DIR__ . "/di-config.php";
         $plugin = $container->get(Plugin::class);
         $plugin->init();
-        PluginAPI::changeContainer($container);
+        PluginAPI::changeDataRepository($container->get(DataRepository::class));
     }
 );
 

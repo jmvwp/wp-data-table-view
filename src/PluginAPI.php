@@ -6,7 +6,6 @@ declare(strict_types=1);
 
 namespace MVWP\WPDataTableView;
 
-use DI\Container;
 use MVWP\WPDataTableView\Providers\DataRepository;
 
 /**
@@ -17,30 +16,30 @@ use MVWP\WPDataTableView\Providers\DataRepository;
 final class PluginAPI
 {
     /**
-     * @var Container
+     * @var DataRepository
      */
-    private static Container $container;
+    private static DataRepository $dataRepository;
 
     /**
-     * @param Container $container
+     * @param DataRepository $dataRepository
      *
      * @return void
      */
-    public static function changeContainer(Container $container)
+    public static function changeDataRepository(DataRepository $dataRepository)
     {
 
-        if (! isset(self::$container)) {
-            self::$container = $container;
+        if (! isset(self::$dataRepository)) {
+            self::$dataRepository = $dataRepository;
         }
     }
 
     /**
      * @return Container
      */
-    protected static function container(): Container
+    protected static function dataRepository(): DataRepository
     {
 
-        return self::$container;
+        return self::$dataRepository;
     }
 
     /**
@@ -49,7 +48,7 @@ final class PluginAPI
     public static function data(): array
     {
         try {
-            $dataRepository = self::container()->get(DataRepository::class);
+            $dataRepository = self::dataRepository();
         } catch (\Exception $error) {
             return [];
         }
