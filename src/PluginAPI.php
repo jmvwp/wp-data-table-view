@@ -34,7 +34,7 @@ final class PluginAPI
     }
 
     /**
-     * @return Container
+     * @return DataRepository
      */
     protected static function dataRepository(): DataRepository
     {
