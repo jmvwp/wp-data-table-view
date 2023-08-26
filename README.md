@@ -35,7 +35,7 @@ For WP to pick up WP Data Table View, you have to do one of the following:
 "repositories": [
     {
       "type": "vcs",
-      "url": "git@github.com:MaksVeter/wp-data-table-view.git"
+      "url": "git@github.com:jmvwp/wp-data-table-view.git"
     }
   ]
 ```
@@ -48,11 +48,8 @@ composer require maksveter/wp-data-table-view
 
 #### Direct upload
 
-You can technically use WP Data Table View by simply extracting all files into the `wp-content/plugins/` folder and installing composer dependencies running the following command in plugin folder:
+You can install the WP Data Table View plugin by uploading .zip archive via WordPress Admin panel. Please switch to `stable` [branch](https://github.com/jmvwp/wp-data-table-view/tree/stable) and click "Code->Download ZIP"
 
-```
-composer install
-```
 
 ## Development
 

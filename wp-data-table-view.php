@@ -6,11 +6,11 @@ declare(strict_types=1);
 
 /**
  * Plugin Name: Wp Data Table View
- * Plugin URI: https://github.com/MaksVeter/wp-data-table-view
+ * Plugin URI: https://github.com/jmvwp/wp-data-table-view
  * Description: Wp Data Table View plugin to display 3rd party content in tables
  * Version: 1.0
  * Author: Maksym Viter
- * Author URI: https://github.com/MaksVeter
+ * Author URI: https://github.com/jmvwp
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Requires PHP: 8.0
