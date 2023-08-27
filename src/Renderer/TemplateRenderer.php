@@ -8,6 +8,7 @@ namespace MVWP\WPDataTableView\Renderer;
 
 use MVWP\WPDataTableView\Admin\Settings;
 use MVWP\WPDataTableView\PluginAPI;
+use MVWP\WPDataTableView\Providers\DataRepository;
 use MVWP\WPDataTableView\RESTController;
 
 /**
@@ -25,16 +26,21 @@ class TemplateRenderer
      * @var RESTController
      */
     private RESTController $restController;
+    /**
+     * @var DataRepository
+     */
+    private DataRepository $dataRepository;
 
     /**
      * @param Settings $settings
      * @param RESTController $restController
      */
-    public function __construct(Settings $settings, RESTController $restController)
+    public function __construct(Settings $settings, RESTController $restController, DataRepository $dataRepository)
     {
 
         $this->settings = $settings;
         $this->restController = $restController;
+        $this->dataRepository = $dataRepository;
     }
 
     /**
@@ -54,6 +60,17 @@ class TemplateRenderer
 
         return $this->settings;
     }
+
+    /**
+     * @return DataRepository
+     */
+    public function dataRepository(): DataRepository
+    {
+
+        return $this->dataRepository;
+    }
+
+
 
     /**
      * @return void
@@ -134,7 +151,7 @@ class TemplateRenderer
                 );
                 $pluginJsSettings = [
                     'data' => [
-                        'users' => PluginAPI::data(),
+                        'users' => $this->dataRepository()->allForRender(),
                         'columns' => [
                             [ 'key' => 'id', 'title' => __('Id', 'mvwp-wp-data-table-view') ],
                             [ 'key' => 'name', 'title' => __('Name', 'mvwp-wp-data-table-view') ],

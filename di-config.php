@@ -37,8 +37,6 @@ $containerBuilder->addDefinitions([
     CacheInterface::class => autowire($cache)
         ->constructorParameter('prefix', MVWP_WP_DATA_TABLE_VIEW_PREFIX),
     TemplateRenderer::class => autowire(TemplateRenderer::class),
-    PluginAPI::class => autowire(PluginAPI::class),
-
 ]);
 
 $container = $containerBuilder->build();
