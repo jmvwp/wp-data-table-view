@@ -65,7 +65,6 @@ add_action(
         $container = include __DIR__ . "/di-config.php";
         $plugin = $container->get(Plugin::class);
         $plugin->init();
-        PluginAPI::changeDataRepository($container->get(DataRepository::class));
     }
 );
 
@@ -87,7 +86,13 @@ function adminNotice(string $message): void
 }
 
 register_activation_hook(__FILE__, function () {
-    flush_rewrite_rules();
+    set_transient('mvwp_flush_rewrite_rule_flag', '1');
+});
+
+add_action('admin_init',function (){
+    if (get_transient('mvwp_flush_rewrite_rule_flag')) {
+        flush_rewrite_rules();
+    }
 });
 
 register_deactivation_hook(__FILE__, function () {
